@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Authority</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .authority-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        input[type="radio"] {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="authority-container">
+        <h2>Select Your Authority</h2>
+        <form method="post">
+            <label>
+                <input type="radio" name="authority" value="school"> School
+            </label>
+            <label>
+                <input type="radio" name="authority" value="district"> District
+            </label>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>

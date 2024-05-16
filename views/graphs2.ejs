@@ -1,0 +1,40 @@
+<!-- graphs.ejs -->
+
+<div style="height: 700px; width: 900px;" >
+    <canvas id="myPieChart"></canvas>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    // Fetch data from the backend
+    fetch('/data2')
+        .then(response => response.json())
+        .then(data => {
+            const labels = data.map(item => item.UNITS);
+            const counts = data.map(item => item.count);
+  
+            const ctx = document.getElementById('myPieChart');
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: counts,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.8)',
+                            'rgba(54, 162, 235, 0.8)',
+                            'rgba(255, 206, 86, 0.8)',
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                }
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+  </script>
+  
